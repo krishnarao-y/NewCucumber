@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Suite" parallel="false">
+  <test name="Test">
+    <parameter name="browserName" value="firefox" />
+    <classes>
+      <class name="com.cucumber.core.DriverFactory"/>	
+      <class name="com.cucumber.tests.RunCukesTest"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

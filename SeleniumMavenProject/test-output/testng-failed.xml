@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]">
+  <parameter name="browserName" value="firefox"/>
+  <test name="Test">
+    <parameter name="browserName" value="firefox"/>
+    <classes>
+      <class name="com.cucumber.core.DriverFactory"/>
+      <class name="com.cucumber.tests.RunCukesTest"/>
+    </classes>
+  </test> <!-- Test -->
+  <test name="Test(failed)">
+    <parameter name="browserName" value="firefox"/>
+    <classes>
+      <class name="com.cucumber.core.DriverFactory">
+        <methods>
+          <include name="getDriver"/>
+        </methods>
+      </class> <!-- com.cucumber.core.DriverFactory -->
+      <class name="com.cucumber.tests.RunCukesTest">
+        <methods>
+          <include name="setUpClass"/>
+          <include name="feature" invocation-numbers="0"/>
+          <include name="tearDownClass"/>
+        </methods>
+      </class> <!-- com.cucumber.tests.RunCukesTest -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->
