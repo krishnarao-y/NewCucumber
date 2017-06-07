@@ -1,0 +1,21 @@
+public String getCellType(Cell cell){
+	  String cellValue = null;
+	  switch (cell.getCellType()) { 
+	      case Cell.CELL_TYPE_STRING: 
+	    	  cellValue = cell.getStringCellValue();
+	    	  break; 
+	      
+	      case Cell.CELL_TYPE_NUMERIC: 
+	    	  int nVal = (int)cell.getNumericCellValue();
+	    	  cellValue = Integer.toString(nVal);
+	          break;
+	          
+	      case Cell.CELL_TYPE_BLANK: 
+	    	  cellValue = String.valueOf(cell.getStringCellValue());
+	    	  cellValue="";
+	          break; 
+	          
+	      default : 
+	  }
+	return cellValue;	  
+  }
