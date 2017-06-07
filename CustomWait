@@ -1,0 +1,34 @@
+public void waitForRecordsOrNoRecords(){
+		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
+			       .withTimeout(1000, TimeUnit.SECONDS)
+			       .pollingEvery(3, TimeUnit.SECONDS);
+			      
+
+		      WebElement e = wait.until(new Function<WebDriver, WebElement>() {
+			     public WebElement apply(WebDriver driver) {
+			    	   WebElement e1 = null;
+			    	   WebElement e2 = null;
+					   WebElement e3 = null;
+					   try{
+						   e1 = driver.findElement(By.xpath("//div[text()='No Records Found']"));
+					   }catch(Exception e){
+						   
+					   }
+					   try{
+						   e2 = driver.findElement(By.xpath("//div[@class='pager-cnt']/div[@class='pull-right']/label[contains(text(),'items')]"));
+					   }catch(Exception e){
+						   
+					   }
+					   
+					   if (e1.isDisplayed()){
+						   e3 = e1;
+					   }
+					   
+					   if (e2 != null){
+						   e3 = e2;
+					   }
+					return e3;
+					   
+			     }
+			   });
+	}
